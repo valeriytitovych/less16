@@ -1,0 +1,134 @@
+// @import "../icons/style.css";
+
+@import "./base";
+@import "./variables";
+@import "./layout";
+
+// navbar
+.main-nav {
+  @extend %flex-align-center;
+
+  justify-content: space-between;
+  padding: 15px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  &.open {
+    flex-direction: column;
+
+    .toggle-btn {
+      .hamburger-menu {
+        display: none;
+      }
+
+      .close {
+        display: inline-block;
+      }
+    }
+  }
+
+  .main-nav-content {
+    @extend %flex-align-center;
+
+    justify-content: space-between;
+
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+      width: 100%;
+    }
+  }
+
+  &-logo {
+    flex-shrink: 0;
+    width: 100px;
+
+    h2 {
+      width: 100%;
+    }
+  }
+
+  .toggle-btn {
+    display: none;
+    font-size: 32px;
+    color: #999;
+    cursor: pointer;
+
+    &:hover {
+      color: #333;
+    }
+
+    .hamburger-menu {
+      display: inline-block;
+    }
+
+    .close {
+      display: none;
+    }
+
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-list {
+    @extend %flex-align-center;
+
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (max-width: map-get($breakpoints, sm)) {
+      display: none;
+    }
+
+    .open & {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid rgba(0, 0, 0, 0.1);
+      width: 100%;
+    }
+  }
+
+  &-item {
+    &:not(:last-child) {
+      margin-right: 16px;
+    }
+
+    .open & {
+      margin-right: 0;
+      margin-bottom: 24px;
+
+      &:first-child {
+        margin-top: 24px;
+      }
+
+      &:last-child {
+        margin-bottom: 18px;
+      }
+    }
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  &-link {
+    color: #999;
+    transition: 0.3s;
+
+    &:hover {
+      text-decoration: underline;
+      color: #333;
+    }
+  }
+
+  .login {
+    padding: 8px 12px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+
+    &:hover {
+      border-color: #94ceb9;
+      text-decoration: none;
+    }
+  }
+}

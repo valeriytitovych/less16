@@ -1,0 +1,18 @@
+// abstract classes
+// %display-flex {
+//   display: flex;
+// }
+
+// %align-items-center {
+//   align-items: center;
+// }
+
+// %flex-align-center {
+//   @extend %display-flex;
+//   @extend %align-items-center;
+// }
+
+%flex-align-center {
+  display: flex;
+  align-items: center;
+}

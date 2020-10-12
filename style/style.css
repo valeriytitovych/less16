@@ -1,0 +1,116 @@
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.main-nav-list, .main-nav .main-nav-content, .main-nav {
+  display: flex;
+  align-items: center;
+}
+
+.main-nav {
+  justify-content: space-between;
+  padding: 15px 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.main-nav.open {
+  flex-direction: column;
+}
+.main-nav.open .toggle-btn .hamburger-menu {
+  display: none;
+}
+.main-nav.open .toggle-btn .close {
+  display: inline-block;
+}
+.main-nav .main-nav-content {
+  justify-content: space-between;
+}
+@media screen and (max-width: 576px) {
+  .main-nav .main-nav-content {
+    width: 100%;
+  }
+}
+.main-nav-logo {
+  flex-shrink: 0;
+  width: 100px;
+}
+.main-nav-logo img {
+  width: 100%;
+}
+.main-nav .toggle-btn {
+  display: none;
+  font-size: 32px;
+  color: #999;
+  cursor: pointer;
+}
+.main-nav .toggle-btn:hover {
+  color: #333;
+}
+.main-nav .toggle-btn .hamburger-menu {
+  display: inline-block;
+}
+.main-nav .toggle-btn .close {
+  display: none;
+}
+@media screen and (max-width: 576px) {
+  .main-nav .toggle-btn {
+    display: flex;
+    align-items: center;
+  }
+}
+.main-nav-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media screen and (max-width: 576px) {
+  .main-nav-list {
+    display: none;
+  }
+}
+.open .main-nav-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+.main-nav-item:not(:last-child) {
+  margin-right: 16px;
+}
+.open .main-nav-item {
+  margin-right: 0;
+  margin-bottom: 24px;
+}
+.open .main-nav-item:first-child {
+  margin-top: 24px;
+}
+.open .main-nav-item:last-child {
+  margin-bottom: 18px;
+}
+.main-nav a {
+  text-decoration: none;
+}
+.main-nav-link {
+  color: #999;
+  transition: 0.3s;
+}
+.main-nav-link:hover {
+  text-decoration: underline;
+  color: #333;
+}
+.main-nav .login {
+  padding: 8px 12px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+.main-nav .login:hover {
+  border-color: #94ceb9;
+  text-decoration: none;
+}

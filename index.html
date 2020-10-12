@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+        href="./style/style.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
+</head>
+
+<body>
+  <nav class="main-nav">
+    <div class="main-nav-content">
+      <div class="main-nav-logo">
+        <img src="./img/logo.svg"
+             alt="logo">
+      </div>
+
+      <div class="toggle-btn">
+        <span class="material-icons hamburger-menu">dehaze</span>
+        <span class="material-icons close">clear</span>
+      </div>
+    </div>
+
+    <ul class="main-nav-list">
+      <li class="main-nav-item">
+        <a class="main-nav-link"
+           href="#">Home</a>
+      </li>
+
+      <li class="main-nav-item">
+        <a class="main-nav-link"
+           href="#">Dashboard</a>
+      </li>
+
+      <li class="main-nav-item">
+        <a class="main-nav-link"
+           href="#">About Us</a>
+      </li>
+
+      <li class="main-nav-item">
+        <a class="main-nav-link login"
+           href="#">LogIn</a>
+      </li>
+    </ul>
+  </nav>
+
+  <script>
+    window.onload = () => {
+      const navBarToggler = document.querySelector('.toggle-btn');
+      const navBarClassList = document.querySelector('.main-nav').classList;
+
+      navBarToggler.addEventListener('click', () => {
+        navBarClassList.toggle('open');
+      });
+
+      window.addEventListener('resize', (event) => {
+        if (event.target.outerWidth > 576 && navBarClassList.contains('open')) {
+          navBarClassList.remove('open');
+        }
+      });
+    };
+  </script>
+</body>
+
+</html>
